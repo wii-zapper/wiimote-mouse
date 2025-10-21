@@ -12,6 +12,8 @@
 // MACRO CONSTANT TYPEDEF PROTYPES
 //--------------------------------------------------------------------+
 
+// Main
+
 /* Blink pattern
  * - 250 ms  : device not mounted
  * - 1000 ms : device mounted
