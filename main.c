@@ -104,7 +104,7 @@ void tud_suspend_cb(bool remote_wakeup_en)
 void tud_resume_cb(void)
 {
   blink_interval_ms = tud_mounted() ? BLINK_MOUNTED : BLINK_NOT_MOUNTED;
-}
+}   
 
 //--------------------------------------------------------------------+
 // USB HID
@@ -116,7 +116,7 @@ static void send_hid_report(uint8_t report_id, uint32_t btn)
   if ( !tud_hid_ready() ) return;
 
   switch(report_id)
-  {
+  { 
     case REPORT_ID_KEYBOARD:
     {
       // use to avoid send multiple consecutive zero report for keyboard
