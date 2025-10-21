@@ -23,9 +23,6 @@
  *
  */
 
-//
-/////////////////////
-////////
 #include <stdlib.h>
 #include <stdio.h>
 #include <string.h>
@@ -38,6 +35,8 @@
 //--------------------------------------------------------------------+
 // MACRO CONSTANT TYPEDEF PROTYPES
 //--------------------------------------------------------------------+
+
+// Gyro
 
 /* Blink pattern
  * - 250 ms  : device not mounted
