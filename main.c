@@ -13,6 +13,10 @@
 // MACRO CONSTANT TYPEDEF PROTYPES
 //--------------------------------------------------------------------+
 
+// PIN DEFINITIONS
+#define GYRO_SDA 8
+#define GYRO_SCL 9
+
 // Gyro
 
 /* Blink pattern
