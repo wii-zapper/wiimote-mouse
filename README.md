@@ -1,2 +1,1 @@
-This is a copy of the hid_composite example from TinyUSB (https://github.com/hathach/tinyusb/tree/master/examples/device/hid_composite)
-showing how to build with TinyUSB when using the Raspberry Pi Pico SDK
+We plan to create HID input devices with a focus on beginner-friendly HID and custom device functionalities. Our input device is a wireless, Wiimote-like controller that will use gyro to control mouse output and have various keyboard and mouse buttons. 
