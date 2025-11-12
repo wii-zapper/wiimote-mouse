@@ -46,7 +46,10 @@ pico_enable_stdio_usb(wiimote 1)
 
 # Add the standard library to the build
 target_link_libraries(wiimote
-        pico_stdlib)
+        pico_stdlib
+        hardware_i2c
+        hardware_gpio
+        )
 
 # Add the standard include files to the build
 target_include_directories(wiimote PRIVATE
@@ -59,5 +62,11 @@ target_link_libraries(wiimote
         
         )
 
-pico_add_extra_outputs(wiimote)
+ #pico_add_extra_outputs(wiimote)
+
+#----------------------------------------------------------------------- This is gyro code --------------------------------------------------
+
+
+
+
 
