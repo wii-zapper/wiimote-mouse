@@ -49,6 +49,18 @@ void gyro_initialize(){
 }
 */
 
+/* 
+int main() {
+    stdio_init_all();
+    sleep_ms(2000);  // wait for USB connection
+
+    while (true) {
+        printf("Pico is alive!\n");
+        sleep_ms(1000);
+    }
+}
+*/
+
 #define MPU6050_ADDR 0x68
 #define PWR_MGMT_1   0x6B
 #define ACCEL_XOUT_H 0x3B
@@ -72,25 +84,29 @@ int16_t  read_raw_data(uint8_t  reg) {
 
 int main() {
     stdio_init_all();
+    sleep_ms(2000);
 
     i2c_init(i2c0, 400000);
     gpio_set_function(I2C_SDA, GPIO_FUNC_I2C);
     gpio_set_function(I2C_SCL, GPIO_FUNC_I2C);
     gpio_pull_up(I2C_SDA);
-    gpio_pull_up(12);
+    gpio_pull_up(I2C_SCL);
 
     sleep_ms(500);
-    mpu6050_reset();
+    mpu6050_reset(); //Something about this line causes the code to crash
     sleep_ms(100);
 
-    while (1) {
-        int16_t  accel_x = read_raw_data(ACCEL_XOUT_H);
+    while (true) {
+        printf("The while true is working");
+        
+        int16_t  accel_x = read_raw_data(ACCEL_XOUT_H); //I think these 7 lines also cause code to crash
         int16_t  accel_y = read_raw_data(ACCEL_XOUT_H + 2);
         int16_t  accel_z = read_raw_data(ACCEL_XOUT_H + 4);
 
         int16_t  gyro_x = read_raw_data(GYRO_XOUT_H);
         int16_t  gyro_y = read_raw_data(GYRO_XOUT_H + 2);
         int16_t  gyro_z = read_raw_data(GYRO_XOUT_H + 4);
+
 
         printf("ACCEL: X=%d  Y=%d  Z=%d | GYRO: X=%d  Y=%d  Z=%d\n",
                accel_x, accel_y, accel_z, gyro_x, gyro_y, gyro_z);

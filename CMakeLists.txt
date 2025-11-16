@@ -62,7 +62,7 @@ target_link_libraries(wiimote
         
         )
 
- #pico_add_extra_outputs(wiimote)
+ pico_add_extra_outputs(wiimote)
 
 #----------------------------------------------------------------------- This is gyro code --------------------------------------------------
 
