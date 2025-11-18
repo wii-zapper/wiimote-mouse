@@ -54,10 +54,7 @@ target_include_directories(wiimote PRIVATE
 )
 
 # Add any user requested libraries
-target_link_libraries(wiimote 
-        hardware_i2c
-        
-        )
+target_link_libraries(wiimote hardware_i2c pico_stdlib pico_unique_id tinyusb_device tinyusb_board)
 
 pico_add_extra_outputs(wiimote)
 
