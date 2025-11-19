@@ -72,7 +72,7 @@ void mpu6050_reset() {
     uint8_t  buf[2];
     buf[0] = PWR_MGMT_1;
     buf[1] = 0x00;
-    i2c_write_blocking(i2c0, MPU6050_ADDR, buf, 2, false);
+    i2c_write_blocking(i2c0, MPU6050_ADDR, buf, 2, false); // this line crashes code
 }
 
 int16_t  read_raw_data(uint8_t  reg) {
@@ -97,6 +97,11 @@ int main() {
     sleep_ms(500);
     mpu6050_reset(); //Something about this line causes the code to crash
     sleep_ms(100);
+
+    while(true) {
+        printf("Works");
+        sleep_ms(1000);
+    }
 
     while (true) {
         printf("The while true is working");
