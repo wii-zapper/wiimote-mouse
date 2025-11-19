@@ -65,8 +65,8 @@ int main() {
 #define PWR_MGMT_1   0x6B
 #define ACCEL_XOUT_H 0x3B
 #define GYRO_XOUT_H  0x43
-#define I2C_SDA 11
-#define I2C_SCL 12
+#define I2C_SDA 8
+#define I2C_SCL 9
 
 void mpu6050_reset() {
     uint8_t  buf[2];
@@ -91,6 +91,8 @@ int main() {
     gpio_set_function(I2C_SCL, GPIO_FUNC_I2C);
     gpio_pull_up(I2C_SDA);
     gpio_pull_up(I2C_SCL);
+
+
 
     sleep_ms(500);
     mpu6050_reset(); //Something about this line causes the code to crash
