@@ -1,0 +1,1 @@
+We plan to create HID input devices with a focus on beginner-friendly HID and custom device functionalities. Our input device is a wireless, Wiimote-like controller that will use gyro to control mouse output and have various keyboard and mouse buttons. 
